@@ -1,5 +1,6 @@
 ########################################|#######################################
 $softwre = "o:\\lib\\src";
+$add_note = "my note";
 $program = "writehist";     # program name
 $version = "\[version 1.0\]";           # version number
 $purpose = "\nPURPOSE: copy deal(s) to latest.\n";
@@ -20,7 +21,7 @@ use dlq;
 require "$softwre\\library.pm";
 #---------------------------------------|---------------------------------------
 # SET LIBRARY PATHS
-# 09/22/15 PC - Added to write out don file 
+# 09/22/15 PC - Added to write out don file
 &init_global_vars;
 &init_paths;
 
@@ -71,7 +72,7 @@ if ($log) {
 unlink $prgdon if -f $prgdon;   # remove done file if it exists
 #---------------------------------------|---------------------------------------
 # CREATE DONE FILE
- 
+
 $date_time = &date_time;    # get date/time
 open (DON,">$prgdon");      # open done for overwrite
 print DON $date_time;     # write done
